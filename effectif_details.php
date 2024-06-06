@@ -50,10 +50,10 @@ include_once 'affichage/_debut.inc.php';
     .hidden { display: none; }
     .background-number {
         position: absolute;
-        top: 50%;
+        top: 70%;
         left: 50%;
         transform: translate(-50%, -50%);
-        font-size: 12em;
+        font-size: 18em;
         color: rgba(0, 0, 0, 0.2);
         z-index: 0;
     }
@@ -97,7 +97,7 @@ include_once 'affichage/_debut.inc.php';
         font-size: 170px;
     }
     .container {
-        width: 70%;
+        width: 50%;
         max-width: 1200px;
         margin: 20px auto;
         padding: 20px;
@@ -129,18 +129,18 @@ include_once 'affichage/_debut.inc.php';
     .player-stats {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: space-evenly;
         margin-bottom: 20px;
     }
     .stat {
         display: flex;
         flex-direction: column;
-        flex: 1 1 22%;
+        flex: 1 2 22%;
         background-color: #daf37c;
         color: black;
         text-align: center;
         margin: 10px;
-        padding: 20px;
+        padding: 15px;
         border-radius: 8px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
@@ -173,6 +173,54 @@ include_once 'affichage/_debut.inc.php';
     #toggleButton:hover {
         background-color: #0056b3;
     }
+
+    @media only screen and (max-width: 600px) {
+            /* Styles pour les appareils avec une largeur maximale de 600px */
+            .flex-container {
+                flex-direction: column;
+            }
+            .containerMaillot,
+            .container {
+                width: 100%;
+            }
+            .containerMaillot {
+                margin-bottom: 20px;
+            }
+            .container {
+                padding: 10px;
+            }
+            .number {
+                font-size: 100px;
+            }
+            .name {
+                font-size: 24px;
+                top: 40px;
+            }
+            .player-stats {
+                flex-direction: column;
+            }
+            .stat {
+                margin: 10px 0;
+                padding: 10px;
+            }
+            .bilan {
+                margin-top: 10px;
+                font-size: 14px;
+            }
+            #containerMatchCenter {
+                width: 100%;
+            }
+            #containerMatch {
+                width: 100%;
+                margin-bottom: 10px;
+                padding: 10px;
+            }
+            #containerMatch1 {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    
 </style>
 
 <style>
@@ -343,7 +391,7 @@ include_once 'affichage/_debut.inc.php';
             </div>
             <div class="stat">
                 <span class="stat-number"><?php echo $ButConcedeEquipeParMatchs; ?></span>
-                <span class="stat-label">But concédé en équipe par Match</span>
+                <span class="stat-label">Concédé en équipe par Match</span>
             </div>
             <div class="stat">
                 <span class="stat-number"><?php echo number_format($rapportVictoiresParMatch, 2); ?></span>

@@ -159,7 +159,6 @@
 
 <style>
   body {
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -195,7 +194,7 @@
 }
 
 .victoire {
-  color: green;
+  color: greenyellow;
   font-weight: bold;
 }
 
