@@ -177,6 +177,9 @@ if (!empty($actualites)) {
         .actualites-container {
             flex-direction: column;
             align-items: center;
+            width: 90%;
+            margin : auto;
+            margin-top: 10px;
         }
 
         .actualite {

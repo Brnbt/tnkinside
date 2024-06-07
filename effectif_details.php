@@ -178,16 +178,20 @@ include_once 'affichage/_debut.inc.php';
             /* Styles pour les appareils avec une largeur maximale de 600px */
             .flex-container {
                 flex-direction: column;
+                border :none;
+                margin-top : 10px;
             }
             .containerMaillot,
             .container {
-                width: 100%;
+                width: 90%;
+                
             }
             .containerMaillot {
                 margin-bottom: 20px;
             }
             .container {
                 padding: 10px;
+                width: 90%;
             }
             .number {
                 font-size: 100px;
@@ -218,6 +222,10 @@ include_once 'affichage/_debut.inc.php';
             #containerMatch1 {
                 flex-direction: column;
                 align-items: flex-start;
+            }
+
+            #resultat{
+                display : flex;
             }
         }
     
@@ -420,7 +428,7 @@ include_once 'affichage/_debut.inc.php';
             <div id="containerMatch1">
                 <div id="containerMatchResultat">
                     <div id="equipeMatch">
-                        <span class="nomAdversaire">
+                        <span class="nomAdversaire text-desktop">
                             <?php
                             foreach ($clubs as $club) {
                                 if ($match["Adversaire"] == "CERGY SELECAO" and ($match["DateMatch"] < "2023-01-01")) {
@@ -439,7 +447,7 @@ include_once 'affichage/_debut.inc.php';
                             <span><?= $match["ScoreTNK"] ?></span> - <span><?= $match["ScoreAdversaires"] ?></span>
                         </div>
                         <img id="imgMatch" src="img/<?= displayLogo($match["Adversaire"]); ?>">
-                        <span class="nomAdversaire"><?= $match["Adversaire"] ?></span>
+                        <span class="nomAdversaire text-desktop"><?= $match["Adversaire"] ?></span>
                     </div>
                 </div>
                 <span><a style="text-decoration: none; color: #daf37c;" class="bilan" href="match_details.php?match_id=<?= $match['MatchID'] ?>">Découvrir</a></span>

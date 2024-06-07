@@ -97,12 +97,12 @@ if ($_SESSION['username'] !== 'adminbbet') {
 
       <div class="form-row">
         <label for="ScoreAdversaires">Buts Adversaires :</label>
-        <input type="number" id="ScoreAdversaires" name="ScoreAdversaires" min="0" required>
+        <input type="number" id="ScoreAdversaires" name="ScoreAdversaires" min="0" >
       </div>
 
       <div class="form-row">
         <label for="ScoreTNK">Buts TNK :</label>
-        <input type="number" id="ScoreTNK" name="ScoreTNK" min="0" required>
+        <input type="number" id="ScoreTNK" name="ScoreTNK" min="0" >
       </div>
 
       <div class="form-row">

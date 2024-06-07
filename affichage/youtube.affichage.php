@@ -63,7 +63,7 @@
     overflow: hidden;
     cursor: pointer;
     color: white;
-    transition: transform 0.2s;
+    transition: transform 0.7s;
 
 }
 

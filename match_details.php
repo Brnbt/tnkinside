@@ -131,14 +131,12 @@ $positions = [
         ?>
     </div>
 </div>
-
-<div style="height: 200px"></div>
-
+/
 <?php include_once 'affichage/_fin.inc.php'; ?>
 
 <div id="deleteModal" class="modal">
     <div class="modal-content">
-        <span class="close">&times;</span>
+        <span class="closes">&times;</span>
         <p>Voulez-vous vraiment supprimer ce match ?</p>
         <button id="confirmDelete" class="confirm-button">Oui</button>
         <button id="cancelDelete" class="cancel-button">Non</button>
@@ -173,18 +171,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <style>
 
-.modal {
-    display: none; 
-    position: fixed; 
-    z-index: 1; 
-    top: 0;
-    width: 100%;
-    height: 100%; 
-    overflow: auto; 
-    background-color: rgb(0,0,0); 
-    background-color: rgba(0,0,0,0.4);
-}
-
 .modal-content {
     margin: 15% auto;
     padding: 20px;
@@ -192,15 +178,15 @@ document.addEventListener("DOMContentLoaded", function() {
     border-radius :8px;
 }
 
-.close {
+.closes {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.closes:hover,
+.closes:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
@@ -593,7 +579,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const deleteModal = document.getElementById('deleteModal');
     const confirmDeleteButton = document.getElementById('confirmDelete');
     const cancelDeleteButton = document.getElementById('cancelDelete');
-    const closeButton = document.getElementsByClassName('close')[0];
+    const closeButton = document.getElementsByClassName('closes')[0];
 
     if (deleteMatchForm) {
         deleteMatchForm.addEventListener('submit', function(event) {

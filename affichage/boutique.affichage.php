@@ -23,7 +23,7 @@
             border-bottom: 1px solid #1d2026;
             border-radius: 5px;
             margin: 0 auto; 
-            transition: transform 0.2s;
+            transition: transform 0.7s;
 
         }
 
@@ -52,6 +52,7 @@
         .content h1 {
             font-size: 2rem; /* Adjust font size for better readability on mobile */
             margin-bottom: 1rem;
+            font-family: 'Krona One', sans-serif;
         }
 
         .content p {

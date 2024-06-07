@@ -3,6 +3,7 @@ setlocale(LC_TIME, 'fr_FR.UTF-8');
 ob_start();
 session_start();
 include_once 'traitement/_fonctions.inc.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -124,7 +125,7 @@ include_once 'traitement/_fonctions.inc.php';
         .modal {
             display: none;
             position: fixed;
-            z-index: 1;
+            z-index: 4;
             left: 0;
             top: 0;
             width: 100%;
@@ -195,18 +196,29 @@ include_once 'traitement/_fonctions.inc.php';
             text-decoration: none;
         }
 
+        
+        .icon-mobile {
+            display: none;
+        }
+
         @media (max-width: 600px) {
+
             .navbar-center {
-                flex-direction: column;
             }
 
             .navbar-center a {
-                margin: 5px 0;
             }
 
             .login-button, .username {
                 font-size: 12px;
                 padding: 5px;
+            }
+
+            .icon-mobile {
+                display: inline;
+            }
+            .text-desktop {
+                display: none;
             }
         }
     </style>
@@ -215,14 +227,15 @@ include_once 'traitement/_fonctions.inc.php';
     <nav class="navbar">
         <div class="navbar-left">
             <a href="index.php"><img src="img/tnknavlogo.png" alt="Logo" class="logo"></a>
+            <!-- <img src="" alt="Logo sponsor" class="sponsor-logo"> -->
         </div>
         <div class="navbar-center">
-            <a href="index.php">Accueil</a>
-            <a href="actualites.php">Actualités</a>
-            <a href="calendrier.php">Calendrier</a>
-            <a href="effectif.php">Effectif</a>
-            <a href="stats.php">Palmarès</a>
-            <a href="https://tnkboutique.company.site/">Boutique</a>
+            <a href="index.php" class="text-desktop"><span class="text-desktop ">Accueil</span></a>
+            <a href="actualites.php"><i class='bx bx-news icon-mobile'></i><span class="text-desktop">Actualités</span></a>
+            <a href="calendrier.php"><i class='bx bx-calendar icon-mobile'></i><span class="text-desktop">Calendrier</span></a>
+            <a href="effectif.php"><i class='bx bx-user icon-mobile'></i><span class="text-desktop">Effectif</span></a>
+            <a href="stats.php"><i class='bx bx-trophy icon-mobile'></i><span class="text-desktop">Palmarès</span></a>
+            <a href="https://tnkboutique.company.site/" class="text-desktop"><i class='bx bx-shopping-bag icon-mobile'></i><span class="text-desktop">Boutique</span></a>
         </div>
         <div class="navbar-right">
             <!-- <img src="" alt="Logo sponsor" class="sponsor-logo"> -->
@@ -231,7 +244,7 @@ include_once 'traitement/_fonctions.inc.php';
                   <button id="profileBtn" class="username"><?php echo strtoupper(htmlspecialchars($_SESSION['username'])); ?></button>
               </a>
               <form id="myform" method="post" action="traitement/_deconnexion.php">
-                <button id="buttonco" class="login-button" type="submit" name="logout">Déconnexion</button>
+                <button id="buttonco" class="login-button" type="submit" name="logout"><i class='bx bx-log-out icon-mobile'></i><span class="text-desktop">Déconnexion</span></button>
               </form>
             <?php } else { ?>        
               <button id="connexionButton" class="login-button">Gestion</button>
@@ -307,5 +320,3 @@ include_once 'traitement/_fonctions.inc.php';
             }
         }
     </script>
-</body>
-</html>

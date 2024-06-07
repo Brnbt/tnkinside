@@ -28,7 +28,7 @@
             max-width: calc(33.333% - 40px);
             margin: 10px;
             text-decoration: none;
-            transition: transform 0.2s;
+            transition: transform 0.7s;
  /* Pour enlever la décoration du lien */
         }
         .derniermatch1:hover{
@@ -84,7 +84,7 @@
         @media (max-width: 600px) {
             .derniermatch1 {
                 flex: 1 1 100%; /* Full width on small screens */
-                max-width: 100%;
+                max-width: 90%;
                 margin: 10px 0;
                  /* Adjust margin for better spacing */
             }

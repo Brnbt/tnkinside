@@ -26,7 +26,7 @@
             flex: 1 1 30%;
             max-width: 30%;
             box-sizing: border-box;
-            transition: transform 0.2s;
+            transition: transform 0.7s;
             text-decoration: none;
         }
 
@@ -110,7 +110,7 @@
         @media (max-width: 768px) {
             .actualite {
                 flex: 1 1 100%;
-                max-width: 100%;
+                max-width: 90%;
             }
         }
 
