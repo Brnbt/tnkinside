@@ -50,7 +50,7 @@ include_once 'affichage/_debut.inc.php';
     .hidden { display: none; }
     .background-number {
         position: absolute;
-        top: 70%;
+        top: 65%;
         left: 50%;
         transform: translate(-50%, -50%);
         font-size: 18em;
@@ -249,6 +249,8 @@ include_once 'affichage/_debut.inc.php';
         margin-bottom: 20px;
         padding: 20px;
         transition: transform 0.2s;
+        cursor: pointer;
+
     }
 
     #containerMatch:hover {
@@ -420,7 +422,7 @@ include_once 'affichage/_debut.inc.php';
     foreach ($TotalDeMatch as $match) {
     ?>
     <div id="containerMatchCenter">
-        <div id="containerMatch">
+        <div id="containerMatch" data-match-id="<?= $match['MatchID'] ?>">
             <span id="contextMatch">
                 <?= strftime('%A %d %B %Y', strtotime($match["DateMatch"])); ?>
             </span>
@@ -461,4 +463,18 @@ include_once 'affichage/_debut.inc.php';
     <p class="position-title">Aucun match joué</p>
 <?php endif; ?>
 
+
 <?php include_once 'affichage/_fin.inc.php'; ?>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const matchDivs = document.querySelectorAll("#containerMatch");
+        
+        matchDivs.forEach(div => {
+            div.addEventListener("click", function() {
+                const matchId = this.getAttribute("data-match-id");
+                window.location.href = `match_details.php?match_id=${matchId}`;
+            });
+        });
+    });
+</script>

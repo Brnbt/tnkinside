@@ -95,7 +95,7 @@
         <div class="overlay">
             <div class="content">
                 <h1>T-SHIRT TNK NOIR</h1>
-                <p>19,99€</p>
+                <p>15,99€</p>
                 <a target="_blank" href="https://tnkboutique.company.site" class="shop-now-button">Disponible</a>
             </div>
         </div>

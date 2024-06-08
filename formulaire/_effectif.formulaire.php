@@ -85,7 +85,7 @@
       <label for="pays">Pays :</label>
       <select id="pays" name="pays" required>
         <option value="">Sélectionnez un pays</option>
-        <option value="">Sélectionnez un pays</option>
+      <option value="Angleterre">Angleterre</option>
       <option value="Algerie">Algerie</option>
       <option value="France">France</option>
       <option value="Centrafrique">Centrafrique</option>

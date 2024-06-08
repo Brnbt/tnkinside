@@ -106,46 +106,43 @@ foreach ($matchsParSaison as $saison => $matchs) {
         
         // Affichage de chaque match
         ?>
-        <div id="containerMatchCenter">
-            <div id="containerMatch">
-                <span id="contextMatch">
-                    <?= strftime('%A %d %B %Y', strtotime($match["DateMatch"])); ?>
+<div id="containerMatchCenter">
+        <div id="containerMatch" data-match-id="<?= $match['MatchID'] ?>">
+            <span id="contextMatch">
+                <?= strftime('%A %d %B %Y', strtotime($match["DateMatch"])); ?>
+            </span>
+            <div id="containerMatch1">
+                <span style="color: gray;font-family: 'Krona One', sans-serif;" id="mediacalenderhide">
+                    <?= $match["TypeMatch"] ?>
                 </span>
-
-                <div id="containerMatch1">
-                    <span style="color: gray;font-family: 'Krona One', sans-serif;" id="mediacalenderhide">
-                        <?= $match["TypeMatch"] ?>
-                    </span>
-                    <div id="containerMatchResultat">
-                        <div id="equipeMatch">
-                            <span class="nomAdversaire">
-                                <?php
-                                foreach ($clubs as $club) {
-                                    if ($match["Adversaire"] == "CERGY SELECAO" and ($match["DateMatch"] < "2023-01-01")) {
-                                        echo $deuxiemeClub['Nom'] . '<br>';
-                                        break;
-                                    } else {
-                                        echo $premierClub['Nom'] . '<br>';
-                                        break;
-                                    }
+                <div id="containerMatchResultat">
+                    <div id="equipeMatch">
+                        <span class="nomAdversaire">
+                            <?php
+                            foreach ($clubs as $club) {
+                                if ($match["Adversaire"] == "CERGY SELECAO" and ($match["DateMatch"] < "2023-01-01")) {
+                                    echo $deuxiemeClub['Nom'] . '<br>';
+                                    break;
+                                } else {
+                                    echo $premierClub['Nom'] . '<br>';
+                                    break;
                                 }
-                                ?>
-                            </span>
-
-                            <img id="imgMatch" src="<?= $match["Adversaire"] == "CERGY SELECAO" && strtotime($match["DateMatch"]) < strtotime("2023-01-01") ? 'img/tnkmannschaft2.png' : 'img/tnklogo.png'; ?>">
-                            <div id="resultat" class="<?= $match["ScoreTNK"] > $match["ScoreAdversaires"] ? 'result-win' : ($match["ScoreTNK"] == $match["ScoreAdversaires"] ? 'result-draw' : 'result-loss'); ?>">
-                                <span><?= $match["ScoreTNK"] ?></span> - <span><?= $match["ScoreAdversaires"] ?></span>
-                            </div>
-                            <img id="imgMatch" src="img/<?= displayLogo($match["Adversaire"]); ?>">
-                            <span class="nomAdversaire"><?= $match["Adversaire"] ?></span>
+                            }
+                            ?>
+                        </span>
+                        <img id="imgMatch" src="<?= $match["Adversaire"] == "CERGY SELECAO" && strtotime($match["DateMatch"]) < strtotime("2023-01-01") ? 'img/tnkmannschaft2.png' : 'img/tnklogo.png'; ?>">
+                        <div id="resultat" class="<?= $match["ScoreTNK"] > $match["ScoreAdversaires"] ? 'result-win' : ($match["ScoreTNK"] == $match["ScoreAdversaires"] ? 'result-draw' : 'result-loss'); ?>">
+                            <span><?= $match["ScoreTNK"] ?></span> - <span><?= $match["ScoreAdversaires"] ?></span>
                         </div>
+                        <img id="imgMatch" src="img/<?= displayLogo($match["Adversaire"]); ?>">
+                        <span class="nomAdversaire"><?= $match["Adversaire"] ?></span>
                     </div>
-                    <span><a style="text-decoration: none; font-family: 'Krona One', sans-serif;" class="bilan" href="match_details.php?match_id=<?= $match['MatchID'] ?>">Découvrir</a></span>
-
                 </div>
-                <span><a id="contextMatch" style="color: gray; "><?= $match["Stade"] ?></a></span>
+                <span><a style="text-decoration: none; font-family: 'Krona One', sans-serif;" class="bilan" href="match_details.php?match_id=<?= $match['MatchID'] ?>">Découvrir</a></span>
             </div>
+            <span><a id="contextMatch" style="color: gray; "><?= $match["Stade"] ?></a></span>
         </div>
+    </div>
         <?php
     }
     echo "</div>";
@@ -193,6 +190,8 @@ table:hover{
     text-align: center;
     border-radius: 5px;
     transition: transform 0.2s;
+    cursor: pointer;
+
 }
 
 #containerMatch:hover{
@@ -256,3 +255,17 @@ table:hover{
     }
 }
 </style>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var matchDivs = document.querySelectorAll('#containerMatch');
+
+        matchDivs.forEach(function (div) {
+            div.addEventListener('click', function () {
+                var matchId = this.getAttribute('data-match-id');
+                if (matchId) {
+                    window.location.href = 'match_details.php?match_id=' + matchId;
+                }
+            });
+        });
+    });
+</script>

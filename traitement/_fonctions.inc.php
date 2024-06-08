@@ -2,9 +2,9 @@
 
 function gestionnaireDeConnexion()
 {
-    $user = 'brn';
-    $pass = 'brn';
-    $dsn = 'mysql:host=localhost;dbname=bolista';
+    $user = 'tnkinsideserver';
+    $pass = 'Q=Dk94BQPDnvj;50nCq>';
+    $dsn = 'mysql:host=192.168.1.188:3306;dbname=bolista';
 
     try {
         $database = new PDO($dsn, $user, $pass);
@@ -808,6 +808,7 @@ function supprimerMatch2($matchId) {
 function getDrapeau($pays)
 {
     $pays_classes = array(
+        'Angleterre' => 'fi fi-uk',
         'Algerie' => 'fi fi-dz',
         'France' => 'fi fi-fr',
         'Centrafrique' => 'fi fi-cf',

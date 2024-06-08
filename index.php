@@ -41,9 +41,9 @@
     <?php include_once 'affichage/boutique2.affichage.php'; ?>
 </section>
 
-<!-- <section id="mediacalenderhide" style="border-bottom: 1px solid #1d2026;">
+<section id="mediacalenderhide" style="border-bottom: 1px solid #1d2026;">
     <?php include_once 'affichage/histoire.affichage.php'; ?>
-</section> -->
+</section>
 
 <section id="mediacalenderhide" style="border-bottom: 1px solid #1d2026;">
     <?php include_once 'affichage/youtube.affichage.php'; ?>
